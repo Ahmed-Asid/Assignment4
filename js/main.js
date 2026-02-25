@@ -1,23 +1,7 @@
-// function show(id) {
-//     document.getElementById("btn-total").classList.remove("active")
-//     document.getElementById("btn-interview").classList.remove("active")
-//     document.getElementById("btn-rejected").classList.remove("active")
 
-//     document.getElementById(id).classList.add("active")
-
-//     if (id === 'btn-total'){
-//         document.getElementById("job-cards").classList.remove("hidden");
-//         document.getElementById("no-job").classList.add("hidden");
-//     }
-//     else if (id === 'btn-interview' || id === 'btn-rejected'){
-//         document.getElementById("job-cards").classList.add("hidden");
-//         document.getElementById("no-job").classList.remove("hidden");
-//     }
-// }
-
-// show("btn-total")
 const allCards = document.getElementById("job-cards");
 const cards = document.getElementsByClassName("card");
+const available = document.getElementById("available");
 // const interviewCard = document.getElementById("interview-card");
 // const rejectCard = document.getElementById("reject-card");
 
@@ -37,6 +21,7 @@ function action(cardId , btn) {
         }
         card.classList.remove("reject")
         card.classList.add("interview");
+        count();
         // interviewCard.appendChild(card);
     }
     else if (btn === 'rej'){
@@ -48,6 +33,7 @@ function action(cardId , btn) {
         }
         card.classList.remove("interview")
         card.classList.add("reject");
+        count();
         // rejectCard.appendChild(card);
     }
 }
@@ -55,16 +41,10 @@ function action(cardId , btn) {
 
 function del(id) {
     const child = document.getElementById(id);
-    allCards.removeChild(child)
+    allCards.removeChild(child);
+    count();
 }
 
-
-    let countTotals = document.getElementById("count-total");
-    function count() {
-        countTotals.innerText = allCards.children.length;
-    }
-    count();
-console.log("j")
 
 function active(id) {
     document.getElementById("btn-all").classList.remove("text-white","bg-black");
@@ -72,18 +52,15 @@ function active(id) {
     document.getElementById("btn-reject").classList.remove("text-white","bg-black")
 
     if (id === "btn-all"){
-        // allCards.classList.remove("hidden");
-        // interviewCard.classList.add("hidden");
-        // rejectCard.classList.add("hidden");
+
         for (const card of cards){
             card.style.display = "block";
         }
         document.getElementById(id).classList.add("text-white","bg-black")
+        available.innerText = document.getElementById("count-total").innerText;
     }
     else if (id === "btn-interview"){
-        // interviewCard.classList.remove("hidden");
-        // allCards.classList.add("hidden");
-        // rejectCard.classList.add("hidden");
+
         for (const card of cards){
             if (card.classList.contains("interview")){
                 card.style.display = "block";
@@ -92,12 +69,12 @@ function active(id) {
                 card.style.display = "none";
             }
         }
+
         document.getElementById(id).classList.add("text-white","bg-black")
+        available.innerText = document.getElementById("count-interview").innerText;
     }
     if (id === "btn-reject"){
-        // rejectCard.classList.remove("hidden");
-        // allCards.classList.add("hidden");
-        // interviewCard.classList.add("hidden");
+
         for (const card of cards){
             if (card.classList.contains("reject")){
                 card.style.display = "block";
@@ -106,7 +83,16 @@ function active(id) {
                 card.style.display = "none";
             }
         }
+
         document.getElementById(id).classList.add("text-white","bg-black")
+        available.innerText = document.getElementById("count-reject").innerText;
     }
 }
 active("btn-all")
+
+function count(){
+    document.getElementById("count-total").innerText = cards.length;
+    document.getElementById("count-interview").innerText = document.getElementsByClassName("interview").length;
+    document.getElementById("count-reject").innerText = document.getElementsByClassName("reject").length;
+}
+count();
