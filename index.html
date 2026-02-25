@@ -52,7 +52,7 @@
 
             <div class="w-1/3 p-5 rounded-lg shadow-sm">
                 <p class="text-[14px]">Total</p>
-                <p class="count-total text-2xl font-bold textColor-1">8</p>
+                <p id="count-total" class="text-2xl font-bold textColor-1">0</p>
             </div>
 
             <div class="w-1/3 p-5 rounded-lg shadow-sm">
@@ -76,14 +76,16 @@
 
         <div id="job-top" class="flex justify-between">
             <p class="textColor-1 font-semibold text-xl">Available Jobs</p>
-            <p class="textColor-2"><span class="count-total">8</span> Jobs</p>
+            <p class="textColor-2"><span id="count-available">8</span> Jobs</p>
         </div>
 
         <div class="space-x-2">
-            <button onclick="show('btn-total')" id="btn-total" class="btn btn-soft  btn-neutral">Total</button>
-            <button onclick="show('btn-interview')" id="btn-interview" class="btn btn-soft btn-neutral">Interview</button>
-            <button onclick="show('btn-rejected')" id="btn-rejected" class="btn btn-soft btn-neutral">Rejected</button>
+            <button onclick="active('btn-all')" id="btn-all" class="btn btn-soft">All</button>
+            <button onclick="active('btn-interview')" id="btn-interview" class="btn btn-soft">Interviewed</button>
+            <button onclick="active('btn-reject')" id="btn-reject" class="btn btn-soft">Rejected</button>
         </div>
+
+        <div class="card-section">
 
         <div id="job-cards" class="flex flex-col gap-4">
 
@@ -100,7 +102,7 @@
                 <p class="text-sm textColor-2">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                 </div>
 
@@ -124,7 +126,7 @@
                 <p class="text-sm textColor-2">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                 </div>
 
@@ -148,7 +150,7 @@
                 <p class="text-sm textColor-2">Boston, MA • Full-time • $125,000 - $165,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                 </div>
 
@@ -172,7 +174,7 @@
                 <p class="text-sm textColor-2">Seattle, WA • Full-time • $140,000 - $190,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                 </div>
 
@@ -196,7 +198,7 @@
                 <p class="text-sm textColor-2">Austin, TX • Full-time • $110,000 - $150,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                 </div>
 
@@ -220,7 +222,7 @@
                 <p class="text-sm textColor-2">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                 </div>
 
@@ -244,7 +246,7 @@
                 <p class="text-sm textColor-2">Remote • Full-time • $120,000 - $160,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                 </div>
 
@@ -268,7 +270,7 @@
                 <p class="text-sm textColor-2">San Francisco, CA • Full-time • $130,000 - $175,000</p>
 
                 <div class="space-y-1">
-                    <button class="px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
+                    <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
                     <p class="text-sm textColor-2">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 </div>
 
@@ -279,19 +281,20 @@
 
             </div>
         </div>
-        
-        <div id="no-job" class="shadow-sm flex flex-col gap-5 justify-center items-center px-10 py-15 rounded-lg mb-36">
-            <img src="./photo/jobs.png" alt="" class="mt-15">
-            <div class="space-y-1 mb-15 text-center">
-                <p class="textColor-1 text-2xl font-semibold">No jobs available</p>
-                <p class="textColor-2">Check back soon for new job opportunities</p>
+
+            <div id="interview-card"></div>
+            <div id="reject-card"></div>
+
+            <div id="no-job" class="w-[80%] shadow-sm flex flex-col gap-5 justify-center items-center px-10 py-15 rounded-lg mb-36 hidden">
+                <img src="./photo/jobs.png" alt="" class="mt-15">
+                <div class="space-y-1 mb-15 text-center">
+                    <p class="textColor-1 text-2xl font-semibold">No jobs available</p>
+                    <p class="textColor-2">Check back soon for new job opportunities</p>
+                </div>
             </div>
         </div>
     </main>
-    <script src="./js/machine.js"></script>
-    <script src="./js/total.js"></script>
-    <script src="./js/interview.js"></script>
-    <script src="./js/reject.js"></script>
-    <script src="./js/delete.js"></script>
+    
+    <script src="./js/main.js"></script>
 </body>
 </html>
