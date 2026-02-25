@@ -17,8 +17,9 @@
 
 // show("btn-total")
 const allCards = document.getElementById("job-cards");
-const interviewCard = document.getElementById("interview-card");
-const rejectCard = document.getElementById("reject-card");
+const cards = document.getElementsByClassName("card");
+// const interviewCard = document.getElementById("interview-card");
+// const rejectCard = document.getElementById("reject-card");
 
 function action(cardId , btn) {
     const card = document.getElementById(cardId);
@@ -34,7 +35,9 @@ function action(cardId , btn) {
             stat.innerText = "Interviewed";
         }
         }
-        interviewCard.appendChild(card);
+        card.classList.remove("reject")
+        card.classList.add("interview");
+        // interviewCard.appendChild(card);
     }
     else if (btn === 'rej'){
         card.classList.add("red-border");
@@ -43,7 +46,9 @@ function action(cardId , btn) {
             stat.innerText = "Rejected";
         }
         }
-        rejectCard.appendChild(card);
+        card.classList.remove("interview")
+        card.classList.add("reject");
+        // rejectCard.appendChild(card);
     }
 }
 
@@ -67,21 +72,40 @@ function active(id) {
     document.getElementById("btn-reject").classList.remove("text-white","bg-black")
 
     if (id === "btn-all"){
-        allCards.classList.remove("hidden");
-        interviewCard.classList.add("hidden");
-        rejectCard.classList.add("hidden");
+        // allCards.classList.remove("hidden");
+        // interviewCard.classList.add("hidden");
+        // rejectCard.classList.add("hidden");
+        for (const card of cards){
+            card.style.display = "block";
+        }
         document.getElementById(id).classList.add("text-white","bg-black")
     }
     else if (id === "btn-interview"){
-        interviewCard.classList.remove("hidden");
-        allCards.classList.add("hidden");
-        rejectCard.classList.add("hidden");
+        // interviewCard.classList.remove("hidden");
+        // allCards.classList.add("hidden");
+        // rejectCard.classList.add("hidden");
+        for (const card of cards){
+            if (card.classList.contains("interview")){
+                card.style.display = "block";
+            }
+            else {
+                card.style.display = "none";
+            }
+        }
         document.getElementById(id).classList.add("text-white","bg-black")
     }
     if (id === "btn-reject"){
-        rejectCard.classList.remove("hidden");
-        allCards.classList.add("hidden");
-        interviewCard.classList.add("hidden");
+        // rejectCard.classList.remove("hidden");
+        // allCards.classList.add("hidden");
+        // interviewCard.classList.add("hidden");
+        for (const card of cards){
+            if (card.classList.contains("reject")){
+                card.style.display = "block";
+            }
+            else {
+                card.style.display = "none";
+            }
+        }
         document.getElementById(id).classList.add("text-white","bg-black")
     }
 }
