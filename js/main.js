@@ -2,6 +2,7 @@
 const allCards = document.getElementById("job-cards");
 const cards = document.getElementsByClassName("card");
 const available = document.getElementById("available");
+let currentTab = "btn-all";
 // const interviewCard = document.getElementById("interview-card");
 // const rejectCard = document.getElementById("reject-card");
 // document.getElementById("no-job").classList.add("hidden");
@@ -74,7 +75,12 @@ function action(cardId , btn) {
         card.classList.add("reject");
         count();
         // rejectCard.appendChild(card);
+        
     }
+    // const activeBtn = document.querySelector(".bg-black");
+    // active(activeBtn.id);
+    active(currentTab);
+    console.log(card.className);
 }
 
 
@@ -85,11 +91,19 @@ function del(id) {
     noJob();
 }
 
+function count(){
+    document.getElementById("count-total").innerText = cards.length;
+    document.getElementById("count-interview").innerText = document.getElementsByClassName("interview").length;
+    document.getElementById("count-reject").innerText = document.getElementsByClassName("reject").length;
+}
+count();
 
 function active(id) {
     document.getElementById("btn-all").classList.remove("text-white","bg-black");
     document.getElementById("btn-interview").classList.remove("text-white","bg-black")
     document.getElementById("btn-reject").classList.remove("text-white","bg-black")
+
+    currentTab = id;
 
     if (id === "btn-all"){
 
@@ -131,13 +145,4 @@ function active(id) {
         noJob();
     }
 }
-active("btn-all")
-
-function count(){
-    document.getElementById("count-total").innerText = cards.length;
-    document.getElementById("count-interview").innerText = document.getElementsByClassName("interview").length;
-    document.getElementById("count-reject").innerText = document.getElementsByClassName("reject").length;
-}
-count();
-
-
+active(currentTab)

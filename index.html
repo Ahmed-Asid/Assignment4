@@ -46,7 +46,7 @@
 <body>
     <header class="w-5/6 mx-auto space-y-5 mt-15">
 
-        <p class="text-[32px] font-bold textColor-1">Job Application Tracker</p>
+        <p class="text-[32px] font-bold textColor-1 text-center sm:text-left">Job Application Tracker</p>
 
         <div id="count-container" class="flex gap-4">
 
@@ -79,7 +79,7 @@
             <p class="textColor-2"><span id="available">8</span> Jobs</p>
         </div>
 
-        <div class="space-x-2">
+        <div class="space-x-2 flex justify-center sm:justify-start">
             <button onclick="active('btn-all')" id="btn-all" class="btn btn-soft">All</button>
             <button onclick="active('btn-interview')" id="btn-interview" class="btn btn-soft">Interviewed</button>
             <button onclick="active('btn-reject')" id="btn-reject" class="btn btn-soft">Rejected</button>
@@ -89,7 +89,7 @@
 
         <div id="job-cards" class="space-y-4 mb-10">
 
-            <div id="mobile" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="mobile" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -99,21 +99,21 @@
                     <div onclick="del('mobile')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Remote • Full-time • $130,000 - $175,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('mobile', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('mobile', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('mobile', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="webflow" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="webflow" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -123,21 +123,21 @@
                     <div onclick="del('webflow')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('webflow', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('webflow', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('webflow', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="dataviz" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="dataviz" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -147,21 +147,21 @@
                     <div onclick="del('dataviz')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Boston, MA • Full-time • $125,000 - $165,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Boston, MA • Full-time • $125,000 - $165,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('dataviz', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('dataviz', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('dataviz', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="cloudfirst" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="cloudfirst" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -171,21 +171,21 @@
                     <div onclick="del('cloudfirst')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Seattle, WA • Full-time • $140,000 - $190,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Seattle, WA • Full-time • $140,000 - $190,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('cloudfirst', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('cloudfirst', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('cloudfirst', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="innovation" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="innovation" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -195,21 +195,21 @@
                     <div onclick="del('innovation')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Austin, TX • Full-time • $110,000 - $150,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Austin, TX • Full-time • $110,000 - $150,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('innovation', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('innovation', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('innovation', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="megacorp" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="megacorp" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -219,21 +219,21 @@
                     <div onclick="del('megacorp')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Remote • Full-time • $130,000 - $175,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('megacorp', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('megacorp', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('megacorp', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="startupxyz" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="startupxyz" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -243,21 +243,21 @@
                     <div onclick="del('startupxyz')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">Remote • Full-time • $120,000 - $160,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">Remote • Full-time • $120,000 - $160,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('startupxyz', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('startupxyz', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('startupxyz', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
 
-            <div id="techno" class="card rounded-lg shadow-sm p-6 space-y-5">
+            <div id="techno" class="card rounded-lg shadow-sm p-6 space-y-5 ">
 
                 <div class="flex justify-between items-center">
                     <div>
@@ -267,16 +267,16 @@
                     <div onclick="del('techno')" class="shadow-sm rounded-full p-1"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
 
-                <p class="text-sm textColor-2">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+                <p class="text-sm textColor-2 text-center sm:text-left">San Francisco, CA • Full-time • $130,000 - $175,000</p>
 
-                <div class="space-y-1">
+                <div class="space-y-1 flex flex-col justify-center sm:justify-start">
                     <button class="details px-3 py-2 textColor-1 font-medium bg-[#EEF4FF] rounded-sm">Not Applied</button>
-                    <p class="text-sm textColor-2">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                    <p class="text-sm textColor-2 text-center sm:text-left">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 </div>
 
-                <div class="space-x-2">
+                <div class="space-x-2 flex justify-center sm:justify-start">
                     <button onclick="action('techno', 'int')" class="btn btn-outline btn-success">Interview</button>
-                    <button onclick="action('techno', 'rej')" class="btn btn-outline btn-error">Rejected</button>
+                    <button onclick="action('techno', 'rej')" class="btn btn-outline btn-error">Reject</button>
                 </div>
 
             </div>
