@@ -3,30 +3,7 @@ const allCards = document.getElementById("job-cards");
 const cards = document.getElementsByClassName("card");
 const available = document.getElementById("available");
 let currentTab = "btn-all";
-// const interviewCard = document.getElementById("interview-card");
-// const rejectCard = document.getElementById("reject-card");
-// document.getElementById("no-job").classList.add("hidden");
-// function noJob() {
-    
-//     if(document.getElementsByClassName("card").length === 0){
-//         document.getElementById("no-job").classList.remove("hidden");
-//     }
-//     else {
-//         document.getElementById("no-job").classList.add("hidden");
-//     } 
-//     if(document.getElementsByClassName("interview").length === 0){
-//         document.getElementById("no-job").classList.remove("hidden");
-//     }
-//     else {
-//         document.getElementById("no-job").classList.add("hidden");
-//     }
-//     if(document.getElementsByClassName("reject").length === 0){
-//         document.getElementById("no-job").classList.remove("hidden");
-//     }
-//     else {
-//         document.getElementById("no-job").classList.add("hidden");
-//     }
-// }
+
 
 function noJob() {
 
@@ -35,8 +12,7 @@ function noJob() {
         if (card.style.display !== "none") {
             visible++;
         }
-    }
-    
+    } 
     if (visible === 0) {
         document.getElementById("no-job").classList.remove("hidden");
     } else {
@@ -44,6 +20,7 @@ function noJob() {
     }
 }
 noJob();
+
 
 function action(cardId , btn) {
     const card = document.getElementById(cardId);
@@ -77,8 +54,6 @@ function action(cardId , btn) {
         // rejectCard.appendChild(card);
         
     }
-    // const activeBtn = document.querySelector(".bg-black");
-    // active(activeBtn.id);
     active(currentTab);
     console.log(card.className);
 }
